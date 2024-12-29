@@ -1,9 +1,7 @@
 # Nmap
-## Uses of Nmap for Metasploitable 2
-From my Kali VM, I used nmap to scan for open ports and services within the Metasploitable 2 VM box. I used the -sS option of stealth scanning as well as the -sV, for service 
-versions. The scan provided me all the open ports and services used within each of these services. The services I focused on for attacks included FTP service(VSFTPD) on port 21,
-Samba SMB on port 139/445, Apache Tomcat on port 8180, Apache on port 80, MySQL on port 3306 and Postgresql on port 5432. 
+## nmap -sS -sV 192.168.191.128
+From my Kali VM, I used nmap to scan for open ports and services within the Metasploitable 2 VM box. The command I used is shown in the header, with -sS and -sV used, stealth scan and service/version informatoin. The sealth scan(sS) is a TCP SYN scan where a SYN packet and analyzes the result to determine whether a port is open or not, doing a half-open scan. This makes the SYN scan harder to detect. sV looks into the version or service used by each port, providing more information to better understand what I am dealing with to formulate a plan of attack
 
-# Nikto 
-I used Nikto for Apache on port 80, to see what vulnerbilities are present that can be exploited, as it is a web scanner which looks for vulnerbilities of the host provided. 
-In this case, the host is the IP address of Metasploitable 2. 
+## nmap --script vuln 192.168.191.128
+I then, after seeing the ports and services/version within them, ran this command, which runs all the scripts under the vuln category of NSE(Nmap Scripting Engine), which check for known vulnerabilities. This helped me identify which ports had vulnerbilities, as some were explicit in the vulnerbilities present, and which ports had areas to look into. 
+
