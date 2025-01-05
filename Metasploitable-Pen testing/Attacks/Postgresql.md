@@ -16,4 +16,8 @@ In this case, it was sucessful, providing the credentails of postgres and postgr
 From checking login credentials, I then moved to another postgresql module, auxiliary/admin/postgres/postgres_readfile. 
 This module, found in Metasploit, allows the reading of files from a system running a PostgreSQL database. This module exploits PostgreSQL's COPY command, which can read server-side files if the database is misconfigured or improperly secured. 
 Thus, once the filepath is provided, in this case /etc/passwd, the module uses PostgresSQL commands to read it, which it does and 
-displays it. 
+displays it. I did try with /etc/shadow, but it did not allow me due to priviledges since I was not the highest user logging on. 
+Still, the /etc/passwd file still provides a lot of information that can be used for future attacks. This includes:
+1. Services on the platform
+2. Usernames for possible brute-force/social engineering
+3. Privildge escalation identification and attempts
