@@ -13,5 +13,7 @@ In this case, it was sucessful, providing the credentails of postgres and postgr
 4. Be able to view and extract sensitive data present in these tables within certain databases
 
 ## Read File
-work on this
-
+From checking login credentials, I then moved to another postgresql module, auxiliary/admin/postgres/postgres_readfile. 
+This module, found in Metasploit, allows the reading of files from a system running a PostgreSQL database. This module exploits PostgreSQL's COPY command, which can read server-side files if the database is misconfigured or improperly secured. 
+Thus, once the filepath is provided, in this case /etc/passwd, the module uses PostgresSQL commands to read it, which it does and 
+displays it. 
