@@ -21,3 +21,11 @@ Still, the /etc/passwd file still provides a lot of information that can be used
 1. Services on the platform
 2. Usernames for possible brute-force/social engineering
 3. Privildge escalation identification and attempts
+
+# Remote Access
+Looking through the postgessql modules present in Metasploit, I found linux/postgres/postgres_payload. This exploit connects to a vulnerable postgresql database with valid credentials, uses its ability to execute system commands to deliver a payload, which is a reverse shell, providing remote access, using Meterpreter. 
+## Exploration with Meterpreter
+Once in the system and using Meterpreter, I explored the target system, going through the various directories, including logs, user, and root. Within root, I looked into the various files and directories present, including the ssh directory. Within it, I looked at the authorized keys as there are neumerous things that can be done with them including:
+  1. Stealing private key to authenticate sessions with public key already is authorized
+  2. Adding attacker's own public key to the authorized keys file, ensuring access
+I then used the search functions to search for files within, using  -f(find pattern) and * for wildcard, using it to find all documents(.doc), log files(.log) to see if I can find anything of importance. I looked into files that I felt were important, but didn't get anything important from them. I then 
