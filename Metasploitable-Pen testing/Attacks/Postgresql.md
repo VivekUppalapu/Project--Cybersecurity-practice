@@ -34,7 +34,9 @@ Post modules in Metasploit are tools that are used after sucessful exploitation,
   1. Information gathering
   2. Priviledge escalation
   3. Lateral Movement
+
 In my case. I used post modules for information gathering, specifically, configuration files, network and user history.
+
 ### post/linux/gather/enum_configs
 This post module searches for commonly installed applications and services, and collects the configuration files. These files contain system and application settings, which can be used to identify potential weakness/vulnerbilities. 
 ### post/linux/gather/enum_network
