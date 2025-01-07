@@ -28,4 +28,9 @@ Looking through the postgessql modules present in Metasploit, I found linux/post
 Once in the system and using Meterpreter, I explored the target system, going through the various directories, including logs, user, and root. Within root, I looked into the various files and directories present, including the ssh directory. Within it, I looked at the authorized keys as there are neumerous things that can be done with them including:
   1. Stealing private key to authenticate sessions with public key already is authorized
   2. Adding attacker's own public key to the authorized keys file, ensuring access
-I then used the search functions to search for files within, using  -f(find pattern) and * for wildcard, using it to find all documents(.doc), log files(.log) to see if I can find anything of importance. I looked into files that I felt were important, but didn't get anything important from them. I then 
+I then used the search functions to search for files within, using  -f(find pattern) and * for wildcard, using it to find all documents(.doc), log files(.log) to see if I can find anything of importance. I looked into files that I felt were important, but didn't get anything important from them.
+## Post modules
+Post modules in Metasploit are tools that are used after sucessful exploitation, and in this case, after exploitation of postgresql, I can use post modules for various purposes, including:
+  1. Information gathering
+  2. Prividlege escalation
+  3. Lateral Movement
