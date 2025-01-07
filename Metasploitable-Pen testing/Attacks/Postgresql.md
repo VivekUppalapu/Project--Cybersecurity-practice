@@ -32,5 +32,12 @@ I then used the search functions to search for files within, using  -f(find patt
 ## Post modules
 Post modules in Metasploit are tools that are used after sucessful exploitation, and in this case, after exploitation of postgresql, I can use post modules for various purposes, including:
   1. Information gathering
-  2. Prividlege escalation
+  2. Priviledge escalation
   3. Lateral Movement
+In my case. I used post modules for information gathering, specifically, configuration files, network and user history.
+### post/linux/gather/enum_configs
+This post module searches for commonly installed applications and services, and collects the configuration files. These files contain system and application settings, which can be used to identify potential weakness/vulnerbilities. 
+### post/linux/gather/enum_network
+This post module gathers network information about the system, including IPTable rules, Network interfaces, wireless connections, Open and listenting ports, Network connections that are active, DNS information and SSH configuration. This networking information can be used to understand the network infastructure, see where to laterally move to(based on open and listening ports), understand and evaluate the network security present by looking at the IPTable rules, and looking to misconfigurations or weak settings in SSH configuration. 
+### post/linux/gather/enum_users_history
+This post module gathers user informaiton, including Shell History, database applications command history, Vim editor history, when they last logged in, and sudoers file contents. This information can be used to understand user priviledges and sudo access rights, and Login patterns to posibly understand user behavior, previous commands executed(possibly exposing sensitive/important information).
