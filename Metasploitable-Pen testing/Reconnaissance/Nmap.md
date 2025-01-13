@@ -5,3 +5,5 @@ From my Kali VM, I used nmap to scan for open ports and services within the Meta
 ## nmap --script vuln 192.168.191.128
 I then, after seeing the ports and services/version within them, ran this command, which runs all the scripts under the vuln category of NSE(Nmap Scripting Engine), which check for known vulnerabilities. This helped me identify which ports had vulnerbilities, as some were explicit in the vulnerbilities present, and which ports had areas to look into. 
 
+### Additional Notes
+The IP address in these nmap scans were discovered through an nmap scan of the 192.168.128.0/24 network.
